@@ -1,0 +1,245 @@
+@import '@fontsource-variable/inter';
+@import '@fontsource/ubuntu-mono';
+
+
+html {
+  /* font */
+  --font-sans: 'Inter Variable', sans-serif;
+  --font-mono: 'Ubuntu Mono', monospace;
+
+	/* dark */
+	--background-dark: #272525;
+	--brand-dark: #e68c3a;
+	--text-1-dark: #f4f2ef;
+	--text-2-dark: #c3c2bf;
+	--muted-dark: #c3c2bf;
+	--accent-dark: #f4f2ef;
+
+	/* light */
+	--background-light: #fff;
+	--brand-light: #000;
+	--text-1-light: #09090b;
+	--text-2-light: #71717a;
+	--muted-light: #e5e7eb;
+	--accent-light: #336021;
+}
+
+:root {
+	color-scheme: dark;
+
+	--background: var(--background-dark);
+	--brand: var(--brand-dark);
+	--text-1: var(--text-1-dark);
+	--text-2: var(--text-2-dark);
+	--muted: var(--mutede-dark);
+	--accent: var(--accent-dark);
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		color-scheme: light;
+
+		--background: var(--background-light);
+		--brand: var(--brand-light);
+		--text-1: var(--text-1-light);
+		--text-2: var(--text-2-light);
+		--muted: var(--muted-light);
+		--accent: var(--accent-light);
+	}
+}
+
+[color-scheme='dark'] {
+	color-scheme: dark;
+
+	--background: var(--background-dark);
+	--brand: var(--brand-dark);
+	--text-1: var(--text-1-dark);
+	--text-2: var(--text-2-dark);
+	--muted: var(--mutede-dark);
+	--accent: var(--accent-dark);
+}
+
+[color-scheme='light'] {
+	color-scheme: light;
+
+	--background: var(--background-light);
+	--brand: var(--brand-light);
+	--text-1: var(--text-1-light);
+	--text-2: var(--text-2-light);
+	--muted: var(--muted-light);
+	--accent: var(--accent-light);
+}
+
+html,
+body {
+	height: auto;
+	font-family: var(--font-sans);
+}
+
+html {
+	color: var(--text-1);
+	accent-color: var(--accent);
+	background-image: var(--background);
+	background-attachment: fixed;
+	line-height: 1.5;
+}
+body {
+	margin: 0;
+}
+
+img {
+	border-radius: var(--radius-3);
+}
+
+.prose {
+	font-size: 16px;
+}
+.prose h2 {
+	font-weight: 700;
+	font-size: 1.5rem;
+	line-height: 1.5rem;
+	/* border-bottom: 1px solid var(--muted); */
+	margin: 3rem 0 1.5rem;
+	scroll-margin: 5rem;
+}
+.prose h2:first-child {
+	margin-top: 0;
+}
+.prose h3 {
+	font-weight: 600;
+	font-size: 1.25rem;
+	line-height: 1.5rem;
+	margin: 2rem 0 0.5rem;
+	scroll-margin: 5rem;
+}
+.prose h4 {
+	margin: 0 0 0.5rem;
+	font-size: 1rem;
+	line-height: 1.5rem;
+}
+.prose h5, h6 {
+	font-size: 1rem;
+	margin: 0;
+	line-height: 1.7;
+}
+
+.prose p {
+	margin: 1.5rem 0 1.5rem;
+	line-height: 1.75;
+}
+.prose p:first-child {
+	margin-top: 0;
+}
+
+.prose ul, ol {
+	margin: 1.25rem 0;
+	padding: 0;
+	list-style: none;
+}
+.prose li {
+	padding-left: 1.5rem;
+	margin: 0.5rem 0;
+	position: relative;
+}
+.prose ol > li {
+	counter-increment: list-counter;
+}
+.prose ul > li::before {
+	height: 5px;
+	width: 5px;
+	content: "";
+	background-color: var(--muted);
+	border-radius: 50%;
+	position: absolute;
+	top: 0.5em;
+	left: 0.5em;
+}
+.prose ol > li::before {
+	content: counter(list-counter) ".";
+	font-weight: 400;
+	color: var(--text-2);
+	position: absolute;
+	left: 0;
+}
+.prose blockquote {
+	margin: 0 0 2rem;
+	padding-left: 1rem;
+	font-weight: 500;
+	font-style: italic;
+	color: var(--text-2);
+	border-left: 0.25rem solid var(--muted);
+}
+
+.prose pre {
+	display: block;
+	margin: 0.5rem 0 1rem;
+	padding: 1rem 0;
+	border-width: 1px;
+	border-radius: 0.25rem;
+	overflow-x: auto;
+	font-family: var(--font-mono);
+	width: 100%;
+}
+.prose pre > code {
+	display: grid;
+	min-width: 100%;
+	overflow-wrap: break-word;
+	border-radius: 0;
+	border-width: 0;
+	padding: 0;
+	counter-reset: line;
+	position: relative;
+	font-size: 0.875rem;
+	background-color: inherit;
+}
+.prose pre > code > span {
+	display: inline-block;
+	min-height: 1rem;
+	padding: 0.125rem 1rem;
+}
+.prose code {
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	font-family: var(--font-mono);
+	padding: 0.2rem 0.3rem;
+	background-color: var(--muted);
+	border-radius: 0.25rem;
+}
+
+.prose a {
+	color: var(--text-1);
+}
+
+.prose table {
+	table-layout: auto;
+	width: 100%;
+	margin: 0 0 2rem;
+	font-size: 0.875rem;
+	line-height: 1.5;
+	text-align: left;
+	border: 0 solid var(--muted);
+	border-collapse: collapse;
+}
+.prose thead {
+	color: var(--text-1);
+	font-weight: 600;
+	border-bottom: 1px solid var(--muted);
+}
+.prose th {
+	padding: 0 1rem 0.625rem;
+}
+.prose th:first-child {
+	padding-left: 0;
+}
+.prose tbody > tr {
+	border-bottom: 1px solid var(--muted);
+}
+.prose td {
+	padding: 0.625rem 1rem;
+}
+.prose td:first-child {
+	padding-left: 0;
+}
+.prose h2 + * {
+	margin-top: 0;
+}
