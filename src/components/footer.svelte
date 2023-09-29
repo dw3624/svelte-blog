@@ -13,6 +13,7 @@
 		padding: 1.5rem 0 1.5rem;
 		max-width: 64rem;
 		margin: 0 auto;
-		border-top: 6px solid var(--text-1);
+		border-top: 0px solid var(--text-1);
+		font-size: var(--font-sm);
 	}
 </style>

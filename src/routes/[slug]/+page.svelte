@@ -17,7 +17,7 @@
 		<h1 class="title">{data.meta.title}</h1>
 		<div class="tags">
 			{#each data.meta.categories as category}
-				<Badge>&num;{category}</Badge>
+				<Badge href={`/tags/${category}`}>{category}</Badge>
 			{/each}
 		</div>
 	</hgroup>
@@ -34,12 +34,12 @@
 	}
 	.date {
 		color: var(--text-2);
-		font-size: 0.875rem;
-		margin-bottom: 1rem;
+		font-size: var(--font-sm);
+		margin-bottom: 0.5rem;
 	}
 	.title {
-		font-weight: 700;
-		font-size: 2.25rem;
+		font-weight: 800;
+		font-size: 2rem;
 		line-height: 2.5rem;
 		scroll-margin: 5rem;
 		margin: 0 0 1.5rem;
@@ -47,8 +47,6 @@
 	.tags {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 0.25rem;
-		margin: 1rem 0 0;
 	}
 
 	.prose {

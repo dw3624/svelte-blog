@@ -6,6 +6,12 @@ html {
   /* font */
   --font-sans: 'Inter Variable', sans-serif;
   --font-mono: 'Ubuntu Mono', monospace;
+	--font-xxl: 1.5rem;
+	--font-xl: 1.25rem;
+	--font-lg: 1.125rem;
+	--font-md: 1rem;
+	--font-sm: 0.875rem;
+	--font-xs: 0.75rem;
 
 	/* dark */
 	--background-dark: #272525;
@@ -96,7 +102,7 @@ img {
 }
 .prose h2 {
 	font-weight: 700;
-	font-size: 1.5rem;
+	font-size: var(--font-xl);
 	line-height: 1.5rem;
 	/* border-bottom: 1px solid var(--muted); */
 	margin: 3rem 0 1.5rem;
@@ -106,8 +112,8 @@ img {
 	margin-top: 0;
 }
 .prose h3 {
-	font-weight: 600;
-	font-size: 1.25rem;
+	font-weight: 800;
+	font-size:  var(--font-lg);
 	line-height: 1.5rem;
 	margin: 2rem 0 0.5rem;
 	scroll-margin: 5rem;
@@ -208,6 +214,9 @@ img {
 
 .prose a {
 	color: var(--text-1);
+}
+.prose a:hover {
+	color: var(--accent);
 }
 
 .prose table {

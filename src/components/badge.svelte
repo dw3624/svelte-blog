@@ -1,14 +1,24 @@
-<div>
-	<slot />
-</div>
+<script>
+	export let href = '#';
+</script>
+
+<a {href}>
+	<div>
+		<slot />
+	</div>
+</a>
 
 <style>
+	a {
+		display: contents;
+	}
+
 	div {
 		display: inline-flex;
 		align-items: center;
 		border-width: 1px;
 		padding: 0.125rem 0.625rem;
-		font-size: 0.75rem;
+		font-size: var(--font-xs);
 		font-weight: 600;
 		line-height: 1rem;
 		transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow,
@@ -24,10 +34,12 @@
 		color: var(--background);
 		border: 1px solid var(--brand);
 		border-radius: 0.25rem;
+		margin-right: 0.25rem;
 	}
 
 	div:hover {
 		background-color: var(--brand);
 		color: var(--background);
+		opacity: 0.6;
 	}
 </style>

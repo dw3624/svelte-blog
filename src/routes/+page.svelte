@@ -11,17 +11,18 @@
 </svelte:head>
 
 <section>
+	<h1>Posts</h1>
 	<div class="posts">
 		{#each data.posts as post}
 			<div class="post">
 				<div class="title-group">
-					<h2 class="title"><a href={post.slug}>{post.title}</a></h2>
-					<p class="description">{post.description}</p>
-					<p class="tags">
+					<h2 class="title"><a href={`/${post.slug}`}>{post.title}</a></h2>
+					<div class="tags">
 						{#each post.categories as category}
-							<Badge>{category}</Badge>
+							<Badge href={`/tags/${category}`}>{category}</Badge>
 						{/each}
-					</p>
+					</div>
+					<p class="description">{post.description || ""}</p>
 				</div>
 				<div class="date">{formatDate(post.date)}</div>
 			</div>
@@ -30,25 +31,27 @@
 </section>
 
 <style>
+	h1 {
+		margin-top: 0;
+	}
 	.posts {
 		display: grid;
 	}
-
 	.post {
 		display: flex;
 		flex-direction: column;
+		/* flex-direction: row-reverse; */
+		padding: 1rem 0;
+		gap: 0.5rem;
 	}
-	.post:first-child > .title-group {
+	.post:first-child {
 		padding-top: 0;
 	}
 	.post:not(:last-child) {
 		border-bottom: 1px solid var(--muted);
 	}
-
-	.title-group {
-		padding: 1.5rem 0;
-	}
 	.title {
+		font-size: var(--font-lg);
 		text-transform: capitalize;
 		border: 0;
 		margin: 0;
@@ -62,18 +65,19 @@
 		text-decoration: underline;
 	}
 	.description {
-		margin: 1rem 0 0;
-		color: var(--text-2);
+		margin: 0.5rem 0 0;
+		font-size: var(--font-sm);
+		color: var(--text-1);
+		line-height: 1.7;
 	}
 	.tags {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 0.25rem;
 		margin: 0.5rem 0 0;
 	}
 	.date {
 		color: var(--text-2);
-		font-size: 0.875rem;
-		padding: 0 0 1.5rem;
+		font-size: var(--font-sm);
+		/* padding: 0 0 1.5rem; */
 	}
 </style>

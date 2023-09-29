@@ -4,17 +4,22 @@
 	export let data;
 </script>
 
-<div class="tags">
-	{#each data.tags as tag}
-		<Badge>{tag}</Badge>
-	{/each}
-</div>
+<section>
+	<h1>Tags</h1>
+	<div class="tags">
+		{#each data.tags as tag}
+		<Badge href={`/tags/${tag}`}>{tag}</Badge>
+		{/each}
+	</div>
+</section>
 
 <style>
+	h1 {
+		margin-top: 0;
+	}
+
 	.tags {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 0.25rem;
-		margin: 0.5rem 0 0;
 	}
 </style>

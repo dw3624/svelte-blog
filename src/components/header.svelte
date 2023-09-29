@@ -32,7 +32,7 @@
 		height: 3.5rem;
 		max-width: 64rem;
 		margin: 0 auto;
-		border-bottom: 1px solid var(--text-1);
+		border-bottom: 0px solid var(--text-1);
 		text-transform: uppercase;
 	}
 
@@ -57,7 +57,7 @@
 		margin: 0;
 		padding: 0;
 		list-style: none;
-		font-size: 0.875rem;
+		font-size: var(--font-sm);
 	}
 	li {
 		color: rgba(var(--text-1), 0.6);
