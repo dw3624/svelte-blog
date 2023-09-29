@@ -8,7 +8,7 @@
 	<h1>Tags</h1>
 	<div class="tags">
 		{#each data.tags as tag}
-		<Badge href={`/tags/${tag}`}>{tag}</Badge>
+			<Badge href={`/tags/${tag}`}>{tag}</Badge>
 		{/each}
 	</div>
 </section>

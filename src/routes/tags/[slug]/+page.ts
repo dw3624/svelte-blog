@@ -1,13 +1,13 @@
-import type { Post } from '$lib/types'
+import type { Post } from '$lib/types';
 
 export const load = async ({ fetch, params }) => {
-  const response = await fetch(`/api/posts`)
-  const posts: Post[] = await response.json()
-  const tag_posts:Post[] = []
-  posts.map((post) => {
-    if (post.categories.includes(params.slug)) {
-      tag_posts.push(post)
-    }
-  })
-  return { params, tag_posts }
-}
+	const response = await fetch(`/api/posts`);
+	const posts: Post[] = await response.json();
+	const tag_posts: Post[] = [];
+	posts.map((post) => {
+		if (post.categories.includes(params.slug)) {
+			tag_posts.push(post);
+		}
+	});
+	return { params, tag_posts };
+};

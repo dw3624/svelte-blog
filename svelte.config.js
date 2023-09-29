@@ -1,19 +1,7 @@
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/kit/vite';
-import { mdsvex, escapeSvelte } from 'mdsvex'
-import shiki from 'shiki'
-
-/** @type {import('mdsvex').MdsvexOptions} */
-const mdsvexOptions = {
-	extensions: ['.md'],
-	highlight: {
-		highlighter: async (code, lang = 'text') => {
-			const highlighter = await shiki.getHighlighter({ theme: 'dark-plus' })
-			const html = escapeSvelte(highlighter.codeToHtml(code, { lang }))
-			return `{@html \`${html}\` }`
-		}
-	},
-}
+import { mdsvex } from 'mdsvex';
+import mdsvexOptions from './mdsvex.config.js';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -22,8 +10,6 @@ const config = {
 
 	kit: {
 		adapter: adapter({
-			// default options are shown. On some platforms
-			// these options are set automatically — see below
 			pages: 'build',
 			assets: 'build',
 			fallback: undefined,

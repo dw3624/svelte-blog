@@ -22,7 +22,7 @@
 							<Badge href={`/tags/${category}`}>{category}</Badge>
 						{/each}
 					</div>
-					<p class="description">{post.description || ""}</p>
+					<p class="description">{post.description || ''}</p>
 				</div>
 				<div class="date">{formatDate(post.date)}</div>
 			</div>
