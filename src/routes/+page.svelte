@@ -18,8 +18,8 @@
 				<div class="title-group">
 					<h2 class="title"><a href={`/${post.slug}`}>{post.title}</a></h2>
 					<div class="tags">
-						{#each post.categories as category}
-							<Badge href={`/tags/${category}`}>{category}</Badge>
+						{#each post.tags as tag}
+							<Badge href={`/tags/${tag}`}>{tag}</Badge>
 						{/each}
 					</div>
 					<p class="description">{post.description || ''}</p>

@@ -2,23 +2,18 @@
 title: 2차원 배열
 description:
 date: '2021-08-14'
-categories:
+tags:
   - 알고리즘
 published: true
 ---
-
-
-
 
 # 2차원 배열
 
 - 1차원 List를 묶어놓은 List
 
-
-
 ### 배열 순회
 
-- n * m 배열의 모든 원소를 빠짐없이 조사하는 방법
+- n \* m 배열의 모든 원소를 빠짐없이 조사하는 방법
 
 ```python
 # 행 우선 순회
@@ -60,4 +55,3 @@ for row in range(3):
         if row < col:
             arr[row][col], arr[col][row] = arr[col][row], arr[row][col]
 ```
-

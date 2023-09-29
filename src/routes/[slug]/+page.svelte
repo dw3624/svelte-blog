@@ -16,8 +16,8 @@
 		<div class="date">{formatDate(data.meta.date)}</div>
 		<h1 class="title">{data.meta.title}</h1>
 		<div class="tags">
-			{#each data.meta.categories as category}
-				<Badge href={`/tags/${category}`}>{category}</Badge>
+			{#each data.meta.tags as tag}
+				<Badge href={`/tags/${tag}`}>{tag}</Badge>
 			{/each}
 		</div>
 	</hgroup>

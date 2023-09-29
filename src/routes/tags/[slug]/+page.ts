@@ -5,7 +5,7 @@ export const load = async ({ fetch, params }) => {
 	const posts: Post[] = await response.json();
 	const tag_posts: Post[] = [];
 	posts.map((post) => {
-		if (post.categories.includes(params.slug)) {
+		if (post.tags.includes(params.slug)) {
 			tag_posts.push(post);
 		}
 	});
