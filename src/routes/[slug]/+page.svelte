@@ -3,6 +3,7 @@
 	import Badge from '../../components/badge.svelte';
 
 	export let data;
+	console.log(data);
 </script>
 
 <svelte:head>

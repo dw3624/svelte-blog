@@ -24,7 +24,7 @@
 		min-height: 100vh;
 	}
 	main > div {
-		max-width: 64rem;
+		max-width: 48rem;
 		padding: 1.5rem;
 		margin: 3.5rem auto 0;
 	}
