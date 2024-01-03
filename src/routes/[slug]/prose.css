@@ -1,0 +1,141 @@
+.prose h2 {
+  font-weight: 700;
+  font-size: var(--font-xl);
+  margin: 3rem 0 1.5rem;
+  scroll-margin: 5rem;
+}
+.prose h2:first-child {
+  margin-top: 0;
+}
+.prose h3 {
+  font-weight: 700;
+  font-size: var(--font-lg);
+  margin: 2rem 0 0.5rem;
+  scroll-margin: 5rem;
+}
+.prose h4 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+.prose h5,
+h6 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.prose p {
+  margin: 1.25rem 0;
+}
+.prose p:first-child {
+  margin-top: 0;
+}
+
+.prose ul,
+ol {
+  margin: 1.25em 0;
+  padding-left: 0;
+  list-style: none;
+}
+.prose li {
+  padding-left: 1.5em;
+  margin: 0.5em 0;
+  position: relative;
+}
+.prose ol > li {
+  counter-increment: list-counter;
+}
+.prose ul > li::before {
+  height: 5px;
+  width: 5px;
+  content: "";
+  background-color: hsl(var(--primary));
+  border-radius: 50%;
+  position: absolute;
+  top: 0.55em;
+  left: 0.5em;
+}
+.prose ol > li::before {
+  content: counter(list-counter) ".";
+  color: hsl(var(--primary));
+  position: absolute;
+  left: 0;
+}
+
+.prose blockquote {
+  margin: 1.6em 0;
+  padding-left: 1em;
+  font-weight: 500;
+  font-style: italic;
+  border-left: 0.25rem solid hsl(var(--primary));
+}
+
+.prose pre {
+  display: block;
+  color: hsl(var(--muted-foreground));
+  background-color: hsl(var(--muted));
+  overflow-x: auto;
+  font-weight: 400;
+  font-size: var(--font-sm);
+  margin: 1.7em 0;
+  padding: 0.85em 1.15em;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  width: 100%;
+}
+.prose pre > code {
+  float: left;
+  min-width: 100%;
+  display: grid;
+  overflow-wrap: break-word;
+  border-radius: 0;
+  border-width: 0;
+  padding: 0;
+  counter-reset: line;
+  position: relative;
+  font-family: var(--font-mono);
+}
+.prose pre > code > span {
+  display: inline-block;
+  min-height: 1rem;
+  padding: 0.125rem 1rem;
+}
+
+.prose a {
+  color: inherit;
+  text-underline-offset: 4px;
+  transition: 0.2s;
+}
+.prose a:hover {
+  color: hsl(var(--muted-foreground));
+}
+
+.prose table {
+  table-layout: auto;
+  width: 100%;
+  margin: 0 0 2rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  text-align: left;
+  border: 0 solid var(--muted);
+  border-collapse: collapse;
+}
+.prose thead {
+  color: var(--text-1);
+  font-weight: 600;
+  border-bottom: 1px solid var(--muted);
+}
+.prose th {
+  padding: 0 1rem 0.625rem;
+}
+.prose th:first-child {
+  padding-left: 0;
+}
+.prose tbody > tr {
+  border-bottom: 1px solid var(--muted);
+}
+.prose td {
+  padding: 0.625rem 1rem;
+}
+.prose td:first-child {
+  padding-left: 0;
+}

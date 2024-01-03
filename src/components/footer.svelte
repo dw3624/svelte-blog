@@ -1,19 +1,19 @@
-<div>
-	<footer>copyright</footer>
-</div>
+<footer>
+  <div>© dw3624</div>
+</footer>
 
 <style>
-	div {
-		padding: 0 1.5rem;
-	}
-	footer {
-		display: flex;
-		justify-content: space-between;
-		height: 2rem;
-		padding: 1.5rem 0 1.5rem;
-		max-width: 64rem;
-		margin: 0 auto;
-		border-top: 0px solid var(--text-1);
-		font-size: var(--font-sm);
-	}
+  footer {
+    padding: 0 1.5rem;
+  }
+  div {
+    height: 96px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    max-width: 64rem;
+    border-top: 0px solid var(--text-1);
+    font-size: var(--font-sm);
+    color: hsl(var(--muted-foreground));
+  }
 </style>

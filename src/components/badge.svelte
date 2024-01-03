@@ -1,45 +1,40 @@
 <script>
-	export let href = '#';
+  export let href = "#";
 </script>
 
 <a {href}>
-	<div>
-		<slot />
-	</div>
+  <div>
+    <slot />
+  </div>
 </a>
 
 <style>
-	a {
-		display: contents;
-	}
+  a {
+    display: contents;
+  }
 
-	div {
-		display: inline-flex;
-		align-items: center;
-		border-width: 1px;
-		padding: 0.125rem 0.625rem;
-		font-size: var(--font-xs);
-		font-weight: 600;
-		line-height: 1rem;
-		transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow,
-			transform;
-		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-		transition-duration: 150ms;
-		outline: 2px solid transparent;
-		outline-offset: 2px;
+  div {
+    padding: 0.125em 0.625em;
+    display: inline-flex;
+    align-items: center;
+    font-size: var(--font-xs);
+    font-weight: 600;
+    line-height: 1rem;
+    transition-property: color, background-color, border-color,
+      text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    border: 1px solid transparent;
+    border-radius: calc(var(--radius) - 2px);
+    margin-right: 0.25rem;
+    white-space: nowrap;
+  }
 
-		/* background-color: var(--background);
-		color: var(--brand); */
-		background-color: var(--brand);
-		color: var(--background);
-		border: 1px solid var(--brand);
-		border-radius: 0.25rem;
-		margin-right: 0.25rem;
-	}
-
-	div:hover {
-		background-color: var(--brand);
-		color: var(--background);
-		opacity: 0.6;
-	}
+  div:hover {
+    background-color: hsl(var(--primary) / 0.9);
+  }
 </style>
