@@ -1,10 +1,8 @@
 <script lang="ts">
-  import "./prose.css";
   import { formatDate } from "$lib/utils";
   import Badge from "../../components/badge.svelte";
 
   export let data;
-  console.log(data);
 </script>
 
 <svelte:head>
@@ -14,15 +12,15 @@
 </svelte:head>
 
 <article>
-  <hgroup>
-    <div class="date">{formatDate(data.meta.date)}</div>
+  <header>
+    <time datetime={data.meta.date}>{formatDate(data.meta.date)}</time>
     <h1 class="title">{data.meta.title}</h1>
     <div class="tags">
       {#each data.meta.tags as tag}
         <Badge href={`/tags/${tag}`}>{tag}</Badge>
       {/each}
     </div>
-  </hgroup>
+  </header>
 
   <div class="prose">
     <svelte:component this={data.content} />
@@ -30,28 +28,26 @@
 </article>
 
 <style>
-  hgroup {
-    padding: 2rem 0;
-    border-bottom: 1px solid hsl(var(--border));
-  }
-  .date {
+  time {
+    display: block;
     color: hsl(var(--muted-foreground));
-    font-size: var(--font-sm);
-    margin-bottom: 0.5rem;
+    font-size: var(--text-sm);
+    line-height: 1.25rem;
   }
+
   .title {
-    font-weight: 800;
-    font-size: var(--font-3xl);
-    line-height: 2.5rem;
-    scroll-margin: 5rem;
+    margin-top: 0.5rem;
+    display: inline-block;
   }
+
   .tags {
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     display: flex;
     flex-wrap: wrap;
+    gap: 0.5rem;
   }
 
   .prose {
-    padding: 2rem 0 3rem;
+    padding: 2rem 0;
   }
 </style>

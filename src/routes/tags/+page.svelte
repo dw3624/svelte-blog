@@ -1,25 +1,29 @@
 <script lang="ts">
-	import Badge from '../../components/badge.svelte';
+  import Badge from "../../components/badge.svelte";
 
-	export let data;
+  export let data;
 </script>
 
 <section>
-	<h1>Tags</h1>
-	<div class="tags">
-		{#each data.tags as tag}
-			<Badge href={`/tags/${tag}`}>{tag}</Badge>
-		{/each}
-	</div>
+  <h1>Tags</h1>
+  <hr />
+  <div class="content">
+    {#each data.tags as tag}
+      <Badge href={`/tags/${tag}`}>{tag}</Badge>
+    {/each}
+  </div>
 </section>
 
 <style>
-	h1 {
-		margin-top: 0;
-	}
+  hr {
+    height: 0;
+    margin: 2rem 0;
+    border-top: 1px solid hsl(var(--border));
+  }
 
-	.tags {
-		display: flex;
-		flex-wrap: wrap;
-	}
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
 </style>

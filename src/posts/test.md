@@ -1,7 +1,7 @@
 ---
 title: First post
 description: First post.
-date: '2023-4-14'
+date: "2023-4-14"
 tags:
   - sveltekit
   - svelte
@@ -27,27 +27,32 @@ published: true
 - Controller가 다수의 View를 선택할 수 있어, 하는 일이 너무 많아질 수 있음
 - 코드 일관성 유지에 노력이 필요
 - View와 Model 사이 의존성 높음 (규모 커질수록 유지보수 어려워짐)
--
 
 ## Markdown
 
 Hey friends! 👋
 
+This is `inline code`
+
 ```ts
 function greet(name: string) {
-	console.log(`Hey ${name}! 👋`);
+  console.log(`Hey ${name}! 👋`);
 }
 ```
 
-## h2 Heading#
+```bash
+this is a test code. this is a test code. this is a test code. this is a test code. this is a test code. this is a test code. this is a test code.
+```
 
-### h3 Heading#
+## h2 Heading
 
-#### h4 Heading#
+### h3 Heading
 
-##### h5 Heading#
+#### h4 Heading
 
-###### h6 Heading#
+##### h5 Heading
+
+###### h6 Heading
 
 ## Emphasis
 
@@ -57,11 +62,11 @@ _This is italic text_
 
 Strikethrough
 
-## Blockquotes#
+## Blockquotes
 
 > Develop. Preview. Ship. – Vercel
 
-## Lists#
+## Lists
 
 Unordered
 
@@ -77,8 +82,20 @@ Ordered
 
 ## Test table
 
+| Left | Center | Right |
+| ---- | :----: | ----: |
+| ss2  |  333   |  3232 |
+|      |  222   |  3232 |
+|      |   23   |       |
+
 | Left | Center | Right | Right | Right | Right | Right | Right | Right | Right |
 | ---- | :----: | ----: | ----: | ----: | ----: | ----: | ----: | ----: | ----: |
 | ss2  |  333   |  3232 |  3232 |  3232 |  3232 |  3232 |  3232 |  3232 |  3232 |
 |      |  222   |  3232 |  3232 |  3232 |  3232 |  3232 |  3232 |  3232 |  3232 |
 |      |   23   |       |       |       |       |       |       |       |       |
+
+## Some links
+
+- [taxonomy by shadcn](https://tx.shadcn.com/blog/preview-mode-headless-cms)
+- [taxonomy by shadcn](https://tx.shadcn.com/blog/preview-mode-headless-cms)
+- [taxonomy by shadcn](https://tx.shadcn.com/blog/preview-mode-headless-cms)

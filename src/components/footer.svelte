@@ -1,19 +1,21 @@
 <footer>
-  <div>© dw3624</div>
+  <div class="container">© dw3624</div>
 </footer>
 
 <style>
   footer {
-    padding: 0 1.5rem;
+    width: 100%;
+    max-width: 48rem;
+    margin: 0 auto;
+    padding: 0 2rem;
   }
-  div {
-    height: 96px;
+
+  .container {
     display: flex;
-    justify-content: end;
     align-items: center;
-    max-width: 64rem;
-    border-top: 0px solid var(--text-1);
-    font-size: var(--font-sm);
+    justify-content: center;
+    font-size: var(--text-sm);
     color: hsl(var(--muted-foreground));
+    padding: 2.5rem 0;
   }
 </style>
