@@ -1,16 +1,13 @@
 <script lang="ts">
-  import "../global.css";
-  import "../app.css";
+  import "../styles/global.css";
   import Header from "../components/header.svelte";
   import Footer from "../components/footer.svelte";
 </script>
 
-<Header />
 <div class="container">
+  <Header />
   <main>
-    <div>
-      <slot />
-    </div>
+    <slot />
   </main>
   <Footer />
 </div>
@@ -19,12 +16,20 @@
   .container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     min-height: 100vh;
   }
-  main > div {
+
+  main {
+    flex: 1;
+    width: 100%;
     max-width: 48rem;
-    padding: 0 1.5rem;
-    margin: 3.5rem auto 0;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
   }
+
+  /* @media screen and (1280px <= width) {
+    main {
+      max-width: 64rem;
+    }
+  } */
 </style>

@@ -1,67 +1,100 @@
 <script>
   import * as config from "$lib/config";
+  import { IconFish, IconSunMoon } from "@tabler/icons-svelte";
+
   const toggle = () => {
     window.document.body.classList.toggle("dark");
   };
 </script>
 
 <header>
-  <div>
+  <div class="container">
+    <div class="content">
+      <a href="/" class="logo">
+        <IconFish size={24} />
+        <span class="title">{config.title}</span>
+      </a>
+      <nav class="menu">
+        <a href="/tags">tags</a>
+      </nav>
+    </div>
+
     <nav>
-      <a href="/" class="logo"> <b>{config.title}</b></a>
-      <ul>
-        <li><a href="/tags">tags</a></li>
-      </ul>
+      <button on:click={toggle} class="toggle-btn">
+        <IconSunMoon size={16} />
+      </button>
     </nav>
-    <button on:click={toggle}>toggle</button>
   </div>
 </header>
 
 <style>
   header {
-    padding: 0 1.5rem;
-    position: fixed;
-    top: 0;
     width: 100%;
-    background-color: hsl(var(--background) / 0.6);
-    z-index: 999;
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid hsl(var(--border) / 0.4);
-  }
-  div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 56px;
-    max-width: 64rem;
+    max-width: 48rem;
     margin: 0 auto;
-    border-bottom: 0px solid var(--text-1);
-    text-transform: uppercase;
+    padding: 0 2rem;
   }
 
-  nav {
+  /* @media screen and (1280px <= width) {
+    header {
+      max-width: 64rem;
+    }
+  } */
+
+  .container {
+    height: 5rem;
     display: flex;
-    gap: 1rem;
+    align-items: center;
     justify-content: space-between;
-    align-items: baseline;
+    padding: 1.5rem 0;
+  }
+
+  .content {
+    display: flex;
+    gap: 2.5rem;
+    text-transform: capitalize;
   }
 
   a {
-    color: inherit;
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: underline;
-    text-underline-offset: 4px;
+    text-decoration: inherit;
+    line-height: 1.25rem;
+    color: hsl(var(--foreground) / 60%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  ul {
+  .logo {
+    color: hsl(var(--primary));
+  }
+
+  .title {
+    margin-left: 0.5rem;
+    display: inline-block;
+    font-weight: 700;
+  }
+
+  .menu {
     display: flex;
-    gap: 0.875rem;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    font-size: var(--font-sm);
+    gap: 1.5rem;
+  }
+
+  .toggle-btn {
+    cursor: pointer;
+    background-color: transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    border-radius: calc(var(--radius) - 2px);
+    height: 2.25rem;
+    width: 2.25rem;
+    transition: 0.15s ease-in-out;
+    color: hsl(var(--foreground));
+
+    &:hover {
+      background-color: hsl(var(--accent));
+      color: hsl(var(--accent-foreground));
+    }
   }
 </style>
