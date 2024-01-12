@@ -35,6 +35,12 @@
     padding: 0 2rem;
   }
 
+  /* @media screen and (1280px <= width) {
+    header {
+      max-width: 64rem;
+    }
+  } */
+
   .container {
     height: 5rem;
     display: flex;
@@ -84,6 +90,7 @@
     height: 2.25rem;
     width: 2.25rem;
     transition: 0.15s ease-in-out;
+    color: hsl(var(--foreground));
 
     &:hover {
       background-color: hsl(var(--accent));

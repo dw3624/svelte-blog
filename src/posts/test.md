@@ -8,6 +8,8 @@ tags:
 published: true
 ---
 
+## TOC
+
 ## MVC (Model-View-Controller)
 
 사용자는 View를 통해 명령을 입력합니다. Controller가 Input을 처리해 Model에 전달합니다. Model은 명령에 따라 View를 업데이트합니다.

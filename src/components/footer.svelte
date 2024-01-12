@@ -10,6 +10,12 @@
     padding: 0 2rem;
   }
 
+  /* @media screen and (1280px <= width) {
+    footer {
+      max-width: 64rem;
+    }
+  } */
+
   .container {
     display: flex;
     align-items: center;

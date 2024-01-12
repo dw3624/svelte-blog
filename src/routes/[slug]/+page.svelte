@@ -3,6 +3,7 @@
   import Badge from "../../components/badge.svelte";
 
   export let data;
+  console.log(data);
 </script>
 
 <svelte:head>
@@ -22,8 +23,11 @@
     </div>
   </header>
 
-  <div class="prose">
-    <svelte:component this={data.content} />
+  <div class="container">
+    <div class="prose">
+      <svelte:component this={data.content} />
+    </div>
+    <!-- <aside>aside</aside> -->
   </div>
 </article>
 
@@ -50,4 +54,24 @@
   .prose {
     padding: 2rem 0;
   }
+
+  /* aside {
+    display: none;
+  } */
+
+  /* @media screen and (1280px <= width) {
+    .container {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      column-gap: 1.5rem;
+    }
+
+    .prose {
+      grid-column: span 3 / auto;
+    }
+
+    aside {
+      display: block;
+    }
+  } */
 </style>

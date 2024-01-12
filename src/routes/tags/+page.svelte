@@ -5,7 +5,7 @@
 </script>
 
 <section>
-  <h1>Tags</h1>
+  <h1>Tags ({data.tags.length})</h1>
   <hr />
   <div class="content">
     {#each data.tags as tag}

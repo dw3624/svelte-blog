@@ -26,4 +26,10 @@
     margin: 0 auto;
     padding: 1.5rem 2rem;
   }
+
+  /* @media screen and (1280px <= width) {
+    main {
+      max-width: 64rem;
+    }
+  } */
 </style>
