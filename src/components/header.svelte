@@ -1,6 +1,6 @@
 <script>
   import * as config from "$lib/config";
-  import { IconSunMoon } from "@tabler/icons-svelte";
+  import { IconFish, IconSunMoon } from "@tabler/icons-svelte";
 
   const toggle = () => {
     window.document.body.classList.toggle("dark");
@@ -11,6 +11,7 @@
   <div class="container">
     <div class="content">
       <a href="/" class="logo">
+        <IconFish size={24} />
         <span class="title">{config.title}</span>
       </a>
       <nav class="menu">
@@ -57,9 +58,19 @@
     justify-content: center;
   }
 
+  .logo {
+    color: hsl(var(--primary));
+  }
+
   .title {
+    margin-left: 0.5rem;
     display: inline-block;
     font-weight: 700;
+  }
+
+  .menu {
+    display: flex;
+    gap: 1.5rem;
   }
 
   .toggle-btn {
